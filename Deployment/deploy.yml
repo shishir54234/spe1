@@ -3,16 +3,29 @@
   hosts: all
   connection: local
   vars:
-    ansible_python3_interpreter: /bin/python3.7
+    ansible_python_interpreter: /usr/bin/python3.7
   tasks:
     - name: Pull image
       docker_image:
         name: shishir34878/calculator1:latest
         source: pull
+
     - name: Start Docker Service
       service:
         name: docker
         state: started
-    - name: Running container
+
+    - name: Remove existing Calculator container (if exists)
+      shell: |
+        docker ps -a -q --filter "name=Calculator" | grep -q . && docker rm -f Calculator || echo "No existing container"
+      ignore_errors: yes
+
+    - name: Running new Calculator container
       shell: docker run -it -d --name Calculator shishir34878/calculator1
 
+#  /usr/bin/python3.6 /usr/bin/python3.8 /usr/bin/python2.7 /usr/bin/python3.8-config
+#  /usr/bin/python /usr/bin/python3.6m /usr/bin/python3.7 /usr/bin/python3.7m
+#  /usr/lib/python3.6 /usr/lib/python3.8 /usr/lib/python2.7 /usr/lib/python3.9
+#  /usr/lib/python3.7 /etc/python3.6 /etc/python3.8 /etc/python2.7 /
+#  etc/python3.7 /usr/local/lib/python3.6 /usr/local/lib/python3.8
+#  /usr/local/lib/python2.7 /usr/local/lib/python3.7 /usr/include/python3.8 /
