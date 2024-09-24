@@ -1,18 +1,18 @@
 ---
 - name: Pull Docker Image of Calculator
   hosts: all
+  connection: local
   vars:
-    ansible_python_interpreter: /usr/bin/python3
+    ansible_python_interpreter: /usr/bin/python
   tasks:
     - name: Pull image
       docker_image:
         name: shishir34878/calculator1:latest
         source: pull
-
-    - name: Start docker service
+    - name: Start Docker Service
       service:
         name: docker
         state: started
-
     - name: Running container
       shell: docker run -it -d --name Calculator shishir34878/calculator1
+
