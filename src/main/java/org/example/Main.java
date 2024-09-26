@@ -9,54 +9,106 @@ public class Main {
     // Using log4j Logger
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-    // Simple calculator functionality
-    public static double calculate(double num1, double num2, char operator) {
-        switch (operator) {
-            case '+':
-                logger.info("Performing addition1");
-                return num1 + num2;
-            case '-':
-                logger.info("Performing subtraction");
-                return num1 - num2;
-            case '*':
-                logger.info("Performing multiplication");
-                return num1 * num2;
-            case '/':
-                if (num2 != 0) {
-                    logger.info("Performing division");
-                    return num1 / num2;
-                } else {
-                    logger.error("Division by zero");
-                    throw new ArithmeticException("Cannot divide by zero");
-                }
-            default:
-                logger.warn("Invalid operator");
-                throw new IllegalArgumentException("Invalid operator");
+    // Method to calculate the square root
+    public static double squareRoot(double num) {
+        logger.info("Calculating square root of " + num);
+        return Math.sqrt(num);
+    }
+
+    // Method to calculate the factorial
+    public static long factorial(int num) {
+        if (num < 0) {
+            logger.error("Factorial of negative number: " + num);
+            throw new IllegalArgumentException("Cannot calculate factorial of negative number");
         }
+        long result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+        logger.info("Calculating factorial of " + num);
+        return result;
+    }
+
+    // Method to calculate natural logarithm
+    public static double naturalLog(double num) {
+        if (num <= 0) {
+            logger.error("Natural logarithm of non-positive number: " + num);
+            throw new IllegalArgumentException("Cannot calculate natural logarithm of non-positive number");
+        }
+        logger.info("Calculating natural logarithm of " + num);
+        return Math.log(num);
+    }
+
+    // Method to calculate power
+    public static double power(double base, double exponent) {
+        logger.info("Calculating " + base + " raised to the power of " + exponent);
+        return Math.pow(base, exponent);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int choice;
 
         logger.info("Start of Execution");
 
-        System.out.print("Enter first number: ");
-        double num1 = scanner.nextDouble();
+        do {
+            System.out.println("\nScientific Calculator Menu:");
+            System.out.println("1. Square Root (√x)");
+            System.out.println("2. Factorial (x!)");
+            System.out.println("3. Natural Logarithm (ln(x))");
+            System.out.println("4. Power (x^y)");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
 
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
+            try {
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter a number: ");
+                        double sqrtNum = scanner.nextDouble();
+                        double sqrtResult = squareRoot(sqrtNum);
+                        System.out.println("Result: √" + sqrtNum + " = " + sqrtResult);
+                        break;
 
-        System.out.print("Enter second number: ");
-        double num2 = scanner.nextDouble();
+                    case 2:
+                        System.out.print("Enter a non-negative integer: ");
+                        int factNum = scanner.nextInt();
+                        long factResult = factorial(factNum);
+                        System.out.println("Result: " + factNum + "! = " + factResult);
+                        break;
 
-        try {
-            double result = calculate(num1, num2, operator);
-            System.out.println("Result: " + result);
-            logger.info("Calculation successful: " + result);
-        } catch (Exception e) {
-            logger.error("Error occurred: " + e.getMessage());
-        }
+                    case 3:
+                        System.out.print("Enter a positive number: ");
+                        double lnNum = scanner.nextDouble();
+                        double lnResult = naturalLog(lnNum);
+                        System.out.println("Result: ln(" + lnNum + ") = " + lnResult);
+                        break;
+
+                    case 4:
+                        System.out.print("Enter base (x): ");
+                        double base = scanner.nextDouble();
+                        System.out.print("Enter exponent (y): ");
+                        double exponent = scanner.nextDouble();
+                        double powerResult = power(base, exponent);
+                        System.out.println("Result: " + base + "^" + exponent + " = " + powerResult);
+                        break;
+
+                    case 5:
+                        logger.info("Exiting the program.");
+                        break;
+
+                    default:
+                        logger.warn("Invalid choice: " + choice);
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            } catch (Exception e) {
+                logger.error("Error occurred: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        } while (choice != 5);
 
         logger.info("End of Execution");
+        scanner.close();
     }
 }

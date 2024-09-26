@@ -6,3 +6,9 @@
 2024-09-25 02:09:08 WARN  Main:12 - Invalid input
 2024-09-25 02:14:36 INFO  Main:11 - Start of Execution
 2024-09-25 02:14:36 WARN  Main:12 - Invalid input
+2024-09-26 18:51:55 INFO  Main:44 - Calculating 2.0 raised to the power of 3.0
+2024-09-26 18:51:55 ERROR Main:35 - Natural logarithm of non-positive number: -5.0
+2024-09-26 18:51:55 INFO  Main:28 - Calculating factorial of 5
+2024-09-26 18:51:55 INFO  Main:38 - Calculating natural logarithm of 2.718281828459045
+2024-09-26 18:51:55 ERROR Main:21 - Factorial of negative number: -3
+2024-09-26 18:51:55 INFO  Main:14 - Calculating square root of 16.0
