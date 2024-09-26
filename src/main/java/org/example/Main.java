@@ -15,7 +15,7 @@ public class Main {
         return Math.sqrt(num);
     }
 
-    // Method to calculate the factorial
+    // Method to calculate the factorial1
     public static long factorial(int num) {
         if (num < 0) {
             logger.error("Factorial of negative number: " + num);
