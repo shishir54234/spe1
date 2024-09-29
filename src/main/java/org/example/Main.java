@@ -9,7 +9,7 @@ public class Main {
     // Using log4j Logger
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-    // Method to calculate the square root
+    // Method to calculate the square root234
     public static double squareRoot(double num) {
         logger.info("Calculating square root of " + num);
         return Math.sqrt(num);
