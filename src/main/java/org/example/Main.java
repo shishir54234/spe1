@@ -94,7 +94,7 @@ public class Main {
                         break;
 
                     case 5:
-                        logger.info("Exiting the program.");
+                        logger.info("Exiting the program. ");
                         break;
 
                     default:

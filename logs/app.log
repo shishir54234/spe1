@@ -1,20 +1,29 @@
-2024-09-25 02:07:56 INFO  Main:11 - Start of Execution
-2024-09-25 02:07:56 WARN  Main:12 - Invalid input
-2024-09-25 02:08:24 INFO  Main:11 - Start of Execution
-2024-09-25 02:08:24 WARN  Main:12 - Invalid input
-2024-09-25 02:09:08 INFO  Main:11 - Start of Execution
-2024-09-25 02:09:08 WARN  Main:12 - Invalid input
-2024-09-25 02:14:36 INFO  Main:11 - Start of Execution
-2024-09-25 02:14:36 WARN  Main:12 - Invalid input
-2024-09-26 18:51:55 INFO  Main:44 - Calculating 2.0 raised to the power of 3.0
-2024-09-26 18:51:55 ERROR Main:35 - Natural logarithm of non-positive number: -5.0
-2024-09-26 18:51:55 INFO  Main:28 - Calculating factorial of 5
-2024-09-26 18:51:55 INFO  Main:38 - Calculating natural logarithm of 2.718281828459045
-2024-09-26 18:51:55 ERROR Main:21 - Factorial of negative number: -3
-2024-09-26 18:51:55 INFO  Main:14 - Calculating square root of 16.0
-2024-09-26 19:52:36 INFO  Main:44 - Calculating 2.0 raised to the power of 3.0
-2024-09-26 19:52:36 ERROR Main:35 - Natural logarithm of non-positive number: -5.0
-2024-09-26 19:52:36 INFO  Main:28 - Calculating factorial of 5
-2024-09-26 19:52:36 INFO  Main:38 - Calculating natural logarithm of 2.718281828459045
-2024-09-26 19:52:36 ERROR Main:21 - Factorial of negative number: -3
-2024-09-26 19:52:36 INFO  Main:14 - Calculating square root of 16.0
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+10:34:49.372 [main] INFO  org.example.Main - Start of Execution
+
+Scientific Calculator Menu:
+1. Square Root (√x)
+2. Factorial (x!)
+3. Natural Logarithm (ln(x))
+4. Power (x^y)
+5. Exit
+Enter your choice: 2
+Enter a non-negative integer: 2
+10:34:53.812 [main] INFO  org.example.Main - Calculating factorial of 2
+Result: 2! = 2
+
+Scientific Calculator Menu:
+1. Square Root (√x)
+2. Factorial (x!)
+3. Natural Logarithm (ln(x))
+4. Power (x^y)
+5. Exit
+Enter your choice: 5
+10:34:55.685 [main] INFO  org.example.Main - Exiting the program.
+10:34:55.686 [main] INFO  org.example.Main - End of Execution
+2024-09-29 16:09:16 INFO  Main:44 - Calculating 2.0 raised to the power of 3.0
+2024-09-29 16:09:16 ERROR Main:35 - Natural logarithm of non-positive number: -5.0
+2024-09-29 16:09:16 INFO  Main:28 - Calculating factorial of 5
+2024-09-29 16:09:16 INFO  Main:38 - Calculating natural logarithm of 2.718281828459045
+2024-09-29 16:09:16 ERROR Main:21 - Factorial of negative number: -3
+2024-09-29 16:09:16 INFO  Main:14 - Calculating square root of 16.0
