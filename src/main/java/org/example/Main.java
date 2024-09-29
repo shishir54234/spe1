@@ -85,7 +85,7 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.print("Enter base (x): ");
+                        System.out.print("Enter base (x)=");
                         double base = scanner.nextDouble();
                         System.out.print("Enter exponent (y): ");
                         double exponent = scanner.nextDouble();
